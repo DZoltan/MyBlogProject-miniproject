@@ -9,6 +9,11 @@ Az üzenetek nyilvántartása is azokon a felöleteken marad meg.
 
 Vágyálomrendszer leírása
 ------------------------
+- A projekt célja egy olyan rendszer, ami a fejlesztő csapatok munkatársai közötti kommunikációt könnyíti.
+- A rendszer lehetőséget nyújt apróbb üzenetek írására, amelyek időrendben egy hírfolyamon vannak közzétéve.
+- Különböző témákat lehet rendelni az üzenetekhez, amelyek alapján szűrni és keresni lehet. Színes cimkékel lehet jelezni a különböző témákat.
+- Lehetőség van reagálni és hozzászólni a kiírt üzenetekre. 
+- Meg lehet adni az üzenet állapotát. (megoldásra vár, megoldott, folyamatban, stb.)
 
 Jelenlegi üzleti folyamatok modellje
 ------------------------------------
@@ -24,10 +29,11 @@ Igényelt üzleti folyamatok modellje.
 - Ötlet közzététele :  
   - A felhasználó megadja a nevét és a kategóriát.
   - Leírja az ötletét, és címet ad neki.
+  - Állapotot adhat és módosíthat (megoldva, megoldásra vár, folyamatban, stb.)
 - Ötlet kommentálása : 
   - A kommentelő egy kattintással megnyitja lehetőséget.
   - Megadja a nevét.
-  - LEírja a kommentjét, majd elküldi.
+  - Leírja a kommentjét, majd elküldi.
 - Keresés:
   - A felhasználó képes keresni a megfelelő mezőkben címre.
   - A lenyíló ablakokban lehetőség legyen kiválasztani a kategóriát és/vagy a szerzőt -> szűrés
