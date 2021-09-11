@@ -3,6 +3,9 @@ Követelményspecifikáció
 
 Jelenlegi helyzet leírása
 -------------------------
+A vállalatunk több rugalmas fejlesztő csapatból áll melyek különböző megbízásokat teljesítenek, vagy néhány csapat ugyan azon a projekten is dolgozhat. 
+Soka megbízás és sokat kell kommunikálni így ezt mind online álltaluk választott felöleteken végzik el. Ennek a hátulütője annyi, hogy így van, aki nem tudja a csoport társának a felületét használni vagy nem szereti így több emberen kell keresztül menjen az információ.
+Az üzenetek nyilvántartása is azokon a felöleteken marad meg.
 
 Vágyálomrendszer leírása
 ------------------------
