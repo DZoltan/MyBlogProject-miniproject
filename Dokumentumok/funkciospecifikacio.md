@@ -41,6 +41,26 @@ Követelménylista
 - Időrendben legyenek a bejegyzések
 - Minimum karakterszám : 30 betű
 
+Használati esetek
+-------------------------------------
+Bejegyzés közzététele:
+1. A felhasználó belelép a szövegbeviteli mezőbe, megírja a bejegyzést
+2. Megadja a kategóriát/cimkét egy legördülő listából.
+3. Megadja a fennmaradó mezőben a nevét.
+4. Elküldi a bejegyzést
+
+Bejegyzés kommentálása: 
+1. A fsz. rákattint a kiválaszott bejegyzésre.
+2. A szövegmezőbe begépeli a hozzászólását.
+3. Megadja a fennamradó mezőben a nevét.
+4. Elküldi a hozzászólást.
+
+Bejegyzés keresése.
+1/a. Kiválasztja a felhasználó a listából, hogy milyen kategóriákra szeretne szűrni.
+1/b. Begépeli a keresőmezőbe a keresett szöveget.
+1/c. Kiválasztja a megadott időintervallumot.
+2. A keresés gomb megnyomásával megjelennek a bejegyzések.
+
 Funckió - követelmény megfeleltetés
 -----------------------------------
 
