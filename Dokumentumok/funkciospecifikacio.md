@@ -10,6 +10,7 @@ Funkcionális Specifikáció
 Jelenlegi helyzet leírása
 -------------------------
 - A cégünk csapatai közötti kommunikáció több különböző felülete tagolódott. Ez a klikkesedés tömérdek mennyiségű időt vesz el a project vezetőktől, hiszen több platformon kénytelenek követni az alakulatok előrehaladását, problémát.
+ - Hatékonyságnövelés érdekében cégünk elhatározta, hogy keresünk ezen probléma áthidalására egy már létező megoldást (pl: trello), de ezen megoldások nem váltották be a hozzájuk társított elvárásokat. Ezért vállalatunk egy új a mi elvárásainknak megfélő weblapot készít
 
 Jelenlegi üzleti folyamatok modellje
 ------------------------------------
