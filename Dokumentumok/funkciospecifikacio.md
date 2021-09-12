@@ -9,6 +9,7 @@ Funkcionális Specifikáció
 
 Jelenlegi helyzet leírása
 -------------------------
+- A cégünk csapatai közötti kommunikáció több különböző felülete tagolódott. Ez a klikkesedés tömérdek mennyiségű időt vesz el a project vezetőktől, hiszen több platformon kénytelenek követni az alakulatok előrehaladását, problémát.
 
 Jelenlegi üzleti folyamatok modellje
 ------------------------------------
