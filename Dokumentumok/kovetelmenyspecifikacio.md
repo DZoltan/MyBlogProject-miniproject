@@ -17,12 +17,27 @@ Vágyálomrendszer leírása
 
 Jelenlegi üzleti folyamatok modellje
 ------------------------------------
-- A vállalatunk több fejlesztő csapattal rendelkezik. 
-  - Minden csapat munkatársai egymás közt apróbb javaslataikat, terveiket vagy öteleteiket egy előre megbeszélt platformon vagy közösségi hálózaton osztják meg egymással. 
-  - Ez lényegében minden fejlesztő csapat számára nagyon fontos, mivel így kihasználva az online hálózatot, hamarabb továbbítódik az információ és megérkezik a küldő munkatárstól a fogadó munkatárshoz. 
-- Minden csapat különböző platformokat választ magának a számukra legmegfelelőbb alapján. 
-  - Vállalatunkban az ilyen fajta darabolódások követhetetlenné tehetik az egyes projektekben fejlesztő kollégák más projektbe való betekintését vagy akár egy másik projekt alapján való inspirálódást, valmint a vállalat egységét is gyengíti. 
-  - Rengeteg időt elvesz a több projektet vezető kollégáktól, amikor különböző platformokban kell nyomon követni egy-egy projekt fejlesztőinek kérdéseit, problémáit és megoldásait.
+- 1. Csoport létrehozása :
+  1.1. A csapat közösen választ egy közösségi hálót vagy platformot, amely információ megosztására és kommunikációra alkalmas. =>
+  1.2. Létrehoznak egy felhasználót, majd a lehetőségeknek megfelelően egy csoportot. 
+  
+- 2. Ötlet közzététele :
+  2.1. Szükség van a 1.1. és 1.2 lépések végrehajtására. =>
+  2.2. A csoportban létrehoz egy üzenetet, amelyben leírja az ötletet. =>
+  2.3. Megjelölheti az üzenetet, vagy kiemelheti, ezt a lehetőségeknek megfelelően. 
+  
+- 3. Keresés :
+  3.1. A már létrehozott felhasználóval bejelentkezés. =>
+  3.2. A kívánt közzétett üzenet megkeresése a hírfolyamon.
+  
+- 4. Ötlet kommentálása :
+  4.1. Megkeresi a kívánt üzenetet a 3.1 és 3.2 alapján. =>
+  4.2. Az üzenethez leírja a megjegyzését. =>
+  4.3. Elküldi a megjegyzést.
+  
+- 5. Ötletre reagálás :
+  5.1 Megkeresi a kívánt üzenetet a 3.1 és 3.2 alapján. =>
+  5.2. Reagál az üzetere (pl. like, dislike, stb.).
 
 Igényelt üzleti folyamatok modellje.
 ------------------------------------
