@@ -14,13 +14,33 @@ Jelenlegi helyzet leírása
 
 Jelenlegi üzleti folyamatok modellje
 ------------------------------------
-- A vállalatunk több fejlesztő csapattal rendelkezik. 
-  - Minden csapat munkatársai egymás közt apróbb javaslataikat, terveiket vagy öteleteiket egy előre megbeszélt platformon vagy közösségi hálózaton osztják meg egymással. 
-  - Ez lényegében minden fejlesztő csapat számára nagyon fontos, mivel így kihasználva az online hálózatot, hamarabb továbbítódik az információ és megérkezik a küldő munkatárstól a fogadó munkatárshoz. 
-- Minden csapat különböző platformokat választ magának a számukra legmegfelelőbb alapján. 
-  - Vállalatunkban az ilyen fajta darabolódások követhetetlenné tehetik az egyes projektekben fejlesztő kollégák más projektbe való betekintését vagy akár egy másik projekt alapján való inspirálódást, valmint a vállalat egységét is gyengíti. 
-  - Rengeteg időt elvesz a több projektet vezető kollégáktól, amikor különböző platformokban kell nyomon követni egy-egy projekt fejlesztőinek kérdéseit, problémáit és megoldásait.
+- 1. Csoport létrehozása:
+  - 1.1. Egy közösségi hálón vagy portálon regisztrálni kell minden csapattagnak. =>
+  - 1.2. A közösségi hálón létre kell hozni egy csoportot. =>
+  - 1.3. A csapat munkatársait hozzá kell adni a csoporthoz. 
 
+- 2. Ötlet közzététele :
+  - 2.1. Ha még nincs csoport létrehozva, akkor a 1. folyamat vérehajtása alapján kell létrehozni. =>
+  - 2.2. Ha van csoport, akkor a csoportban létrehoz egy üzenetet, amelyben leírja az ötletet. =>
+  - 2.3. Megjelölheti az üzenetet, vagy kiemelheti, ezt a platform lehetőségeinek megfelelően. =>
+  - 2.4. Közzéteszi az üzenetet.
+  
+- 3. Keresés :
+  - 3.1. Ha van csoport (1. folyamat végre lett hajtva) és vannak üzenetek (a 2. folyamat végere lett hajtva). =>
+  - 3.2. A már létrehozott felhasználóval bejelentkezés. =>
+  - 3.3. A kívánt közzétett üzenet megkeresése a hírfolyamon a keresőbe írt kulcsszavak alapján.
+  
+- 4. Ötlet kommentálása :
+  - 4.1. Bejelentkezés a felhasználóba, aztán a csoporthoz navigálás. =>
+  - 4.2. Megkeresi a kívánt üzenetet a 3. folyamat végrehajtása alapján. =>
+  - 4.3. Az üzenethez leírja a megjegyzését. =>
+  - 4.4. Elküldi a megjegyzést.
+  
+- 5. Ötletre reagálás :
+  - 5.1. Bejelentkezés a felhasználóba, aztán a csoporthoz navigálás. =>
+  - 5.2. Megkeresi a kívánt üzenetet a 3. folyamat végrehajtása alapján. =>
+  - 5.3. Reagál az üzetere (pl. like, dislike, stb.).
+  
 Igényelt üzleti folyamatok modellje
 ------------------------------------
 - Ötlet közzététele :  
