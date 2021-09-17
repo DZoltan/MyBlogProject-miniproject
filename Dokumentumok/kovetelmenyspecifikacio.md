@@ -3,9 +3,9 @@ Követelményspecifikáció
 
 Jelenlegi helyzet leírása
 -------------------------
-A vállalatunk több rugalmas fejlesztő csapatból áll melyek különböző megbízásokat teljesítenek, vagy néhány csapat ugyan azon a projekten is dolgozhat. 
-Soka megbízás és sokat kell kommunikálni így ezt mind online álltaluk választott felöleteken végzik el. Ennek a hátulütője annyi, hogy így van, aki nem tudja a csoport társának a felületét használni vagy nem szereti így több emberen kell keresztül menjen az információ.
-Az üzenetek nyilvántartása is azokon a felöleteken marad meg.
+- A vállalatunk több rugalmas fejlesztő csapatból áll melyek különböző megbízásokat teljesítenek, vagy néhány csapat ugyan azon a projekten is dolgozhat. 
+- Sok a megbízás és sokat kell kommunikálni így ezt mind online álltaluk választott felületeken végzik el. Ennek a hátulütője annyi, hogy így van, aki nem tudja a csoport társának a felületét használni vagy nem szereti így több emberen kell keresztül menjen az információ.
+- Az üzenetek nyilvántartása is azokon a felöleteken marad meg.
 
 Vágyálomrendszer leírása
 ------------------------
@@ -42,16 +42,17 @@ Jelenlegi üzleti folyamatok modellje
 Igényelt üzleti folyamatok modellje.
 ------------------------------------
 - Ötlet közzététele :  
-  - A felhasználó megadja a nevét és a kategóriát.
-  - Leírja az ötletét, és címet ad neki.
-  - Állapotot adhat és módosíthat (megoldva, megoldásra vár, folyamatban, stb.)
+  - A felhasználó megadja a nevét és a kategóriát. =>
+  - Leírja az ötletét, és címet ad neki. =>
+  - Állapotot adhat és módosíthat (megoldva, megoldásra vár, folyamatban, stb.).
 - Ötlet kommentálása : 
-  - A kommentelő egy kattintással megnyitja lehetőséget.
-  - Megadja a nevét.
+  - A kommentelő egy kattintással megnyitja lehetőséget. =>
+  - Megadja a nevét. =>
   - Leírja a kommentjét, majd elküldi.
 - Keresés:
-  - A felhasználó képes keresni a megfelelő mezőkben címre.
-  - A lenyíló ablakokban lehetőség legyen kiválasztani a kategóriát és/vagy a szerzőt -> szűrés
+  - A felhasználó képes keresni a megfelelő mezőkben címre. =>
+  - A lenyíló ablakokban lehetőség legyen kiválasztani a kategóriát és/vagy a szerzőt. -> 
+  - Szűrés.
 
 Követelménylista
 --------------------------------------
