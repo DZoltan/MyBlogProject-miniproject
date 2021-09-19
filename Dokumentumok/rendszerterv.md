@@ -80,3 +80,10 @@ Fizikai környezet
 - A grafikus megjelenítést a Java Swingel valósítjuk meg. 
 - Nincs szükség továbbá semmilyen hálózati beállításra, leszámítva, hogy el kell érnie a JSON fájlt a programnak. Ezért szükséges a folyamatos internetkapcsolat.
 - A programnak futás közben minimális erőforrásra van szüksége, a tároláshoz szükséges lemezterület elhanyagolható.
+
+Implementációs terv
+-------------------
+- A Java platformfüggetlensége miatt nincs szükség kompatibilitási megoldásokra.
+- Az alkalmazást különböző részegységekre, modulokra kell bontani, hogy a későbbiekben, illetve a fejlesztés során könnyedén lehessen új funkciókat bekötni.
+- A JSON állomány felépítését egy vagy több osztály reprezentálja. Ezen objektumok tartalmazzák és teszik módósíthatóvá az adatokat.
+- Törekedni kell a clean code szabályok és SOLID alapelvek betartására. 
