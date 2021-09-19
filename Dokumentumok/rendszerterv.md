@@ -4,6 +4,11 @@ Rendszerterv
 A rendszer célja
 -----------------
 
+- Egy olyan oldal, amely segíti a fejlesztő csapatok munkatársai között a kommunikációt, valamint egy egységes
+rendszert biztosí a vállalat számára. 
+- A fejlesztők megtudják osztani ötleteiket, problémáikat és megoldásaikat egy hírfolyamon, amelyekre kollégáik reagálnak, kommentelnek hozzá így segítve a fejlesztési menet fliuditását. A üzenetek időrendben egy hírfolyamon vannak közzétéve. Az üzenetek állapotát meg lehet adni, vagyis megoldásra vár, megoldott, folyamatban, stb.  
+- Különböző témákat lehet rendelni az üzenetekhez, amelyek alapján szűrni és keresni lehet. Színes cimkékel lehet jelezni a különböző témákat.
+
 Projektterv
 ------------
 
@@ -22,13 +27,56 @@ Projektterv
 
 Követelmények
 --------------
+K01 Egyszerű, átlátható dizájn  
+K02 Könnyen kezelhető felület  
+K03 Név megadása  
+	- A felhasználók megadhassák nevüket, amit kijelez ha bejegyzést, vagy kommentet írnak  
+K04 Operácoósrendszer függetlenség  
+	- Az elkészített rendszert, első sorban Windows-on és Linux-on szeretnénk használni  
+K05 Dátummal ellátott bejegyzések  
+	- A bejegyzésnél legyen látható, hogy ki írta és hogy mikor  
+K06 Komment lehetőség  
+	- A bejegyzéshez lehessen kommentelni bármelyik felhasználónak  
+K07 Adatok mellőzése  
+	- A rendszer ne kérjen be semmilyen adatot a felhasználótól, az általa megadott neven kívül  
 
 Funkcionális terv
 -------------------
+- **Rendszerszereplők:**
+  - *Minden felhasználó az alábbi két rendszerszerepet veheti fel. Továbbá minden üzenethez egy üzenetet létrehozó tartozhat. Az üzenetet létrehozónak is lehetősége van hozzászólni a saját üzenetéhez és másokéhoz.*
+  * Üzenetet létrehozó
+  * Üzenetre reagáló
+- **Rendszerszerhasználati esetek és lefutásaik:**
+  #### Üzenetet létrehozó: ####
+  - Üzenetet tud létrehozni és módosítani.
+  - Saját üzeneteinek címet adhat meg és változtathatja.
+  - Saját üzeneteinek témát adhat meg és változtathatja.
+  - Saját üzeneteinek állapotot adhat meg (Pl. megoldva, megoldásra vár, stb.) és változtathatja. 
+  - Saját üzeneteit törölheti.
+  
+  #### Üzenetre reagáló: ####
+  - Egy üzenetre reagálhat(Pl. like, dislike, stb.) és változtathatja a reakciót.
+  - Egy üzenethez hozzászólhat és saját hozzászólását megváltoztathatja.
+  
+- **Menü-hierarchiák:**
+  #### Belépés: ####
+  * Név megadása
+  * Belépés
+  
+  #### Hírfolyam: ####
+  * Üzenet létrehozás 
+  * Keresés
+  * Üzenet megnyitás
+  * Kilépés
+  
+  #### Üzenet: ####
+  * Reagálás
+  * Hozzászólás
+  * Visszalépés a hírfolyamba
 
 Fizikai környezet
 -----------------
-- A program a 17 es javaban készül, ami az új megjelenés ellenére egy LTE verzió, tehát hosszútávon támogatott. Szükség van különböző beimportált projektek (pl. Jackson a JSON kezeléshez) kezelésére, amit az Apache Maven valósít meg.
-- A grafikus megjelenítést a Java Springel valósítjuk meg. 
+- A program a 17 es javaban készül, ami az új megjelenés ellenére egy LTS verzió, tehát hosszútávon támogatott. Szükség van különböző beimportált projektek (pl. Jackson a JSON kezeléshez) kezelésére, amit az Apache Maven valósít meg.
+- A grafikus megjelenítést a Java Swingel valósítjuk meg. 
 - Nincs szükség továbbá semmilyen hálózati beállításra, leszámítva, hogy el kell érnie a JSON fájlt a programnak. Ezért szükséges a folyamatos internetkapcsolat.
 - A programnak futás közben minimális erőforrásra van szüksége, a tároláshoz szükséges lemezterület elhanyagolható.
