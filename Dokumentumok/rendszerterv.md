@@ -27,7 +27,6 @@ Projektterv
 
 Követelmények
 --------------
-Követelmények
 K01 Egyszerű, átlátható dizájn  
 K02 Könnyen kezelhető felület  
 K03 Név megadása  
