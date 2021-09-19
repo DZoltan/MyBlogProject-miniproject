@@ -26,9 +26,9 @@ Követelmények
 Funkcionális terv
 -------------------
 - **Rendszerszereplők:**
-  *Minden felhasználó az alábbi két rendszerszerepet veheti fel. Továbbá minden üzenethez egy üzenetet létrehozó tartozhat. Az üzenetet létrehozónak is lehetősége van hozzászólni a saját üzenetéhez és másokéhoz.*
-  i. Üzenetet létrehozó
-  ii. Üzenetre reagáló
+  - *Minden felhasználó az alábbi két rendszerszerepet veheti fel. Továbbá minden üzenethez egy üzenetet létrehozó tartozhat. Az üzenetet létrehozónak is lehetősége van hozzászólni a saját üzenetéhez és másokéhoz.*
+  * Üzenetet létrehozó
+  * Üzenetre reagáló
 - **Rendszerszerhasználati esetek és lefutásaik:**
   #### Üzenetet létrehozó: ####
   - Üzenetet tud létrehozni és módosítani.
