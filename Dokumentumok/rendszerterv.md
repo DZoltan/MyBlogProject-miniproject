@@ -3,6 +3,7 @@ Rendszerterv
 
 A rendszer célja
 -----------------
+- A vállalati kommuniáció, információ  megosztsás lebonyolítása. Felhasználók regisztrálása, névhez kapcsolása a vállalati környezetből beléptetés, kiléptetés előre megadott felhasználó, jelszó párossal. Problémák, ötletek meg vitatására szolgáló hífolyam létrehozása, valamint az ebben való kereshetőség, rendezés. 
 
 Projektterv
 ------------
