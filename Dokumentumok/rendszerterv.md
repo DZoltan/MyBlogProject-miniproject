@@ -13,7 +13,9 @@ Projektterv
 - Ütemterv: 
     Heti sprintekben történik a fejlesztés. A planningen megbeszélik a kollégák a heti taskokat, amiket a retrok során kiértékelnek. Fontos reális célokat kitűzni, hogy telejsíthetőek legyenek az elvárások.
 - Mérföldkövek: 
-    A dokumentációk elkészítese jelenti a fejlesztés első mérföldkövét, ezzel párhuazamosan zajlanak a főbb funkciók kialakításai. A fejlesztés legnagyobb részét teszi ki ez a szekció. Ha a főbb funkciók működnek, szükség lesz a tesztelésére is ezeknek a funkcióknak. Ennéla  mérföldkőnél rendelekzésére fog állni a program váza, illetve működőképes lesz. A következő, utolsó, etapban pedig a kényelmi funkciók, illetve a dizájn kerül beépítésre.
+    1. A dokumentációk elkészítese jelenti a fejlesztés első mérföldkövét, ezzel párhuazamosan zajlanak a főbb funkciók kialakításai. 
+    2. A fejlesztés legnagyobb részét teszi ki ez a szekció. Ha a főbb funkciók működnek, szükség lesz a tesztelésére is ezeknek a funkcióknak. Ennél a mérföldkőnél rendelkezésére         fog állni a program váza, illetve működőképes lesz. 
+    3. A következő, utolsó, etapban pedig a kényelmi funkciók, illetve a dizájn kerül beépítésre.
 
 Üzleti folyamatok modellje
 ---------------------------
