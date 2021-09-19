@@ -25,6 +25,37 @@ Követelmények
 
 Funkcionális terv
 -------------------
+- **Rendszerszereplők:**
+  *Minden felhasználó az alábbi két rendszerszerepet veheti fel. Továbbá minden üzenethez egy üzenetet létrehozó tartozhat. Az üzenetet létrehozónak is lehetősége van hozzászólni a saját üzenetéhez és másokéhoz.*
+  i. Üzenetet létrehozó
+  ii. Üzenetre reagáló
+- **Rendszerszerhasználati esetek és lefutásaik:**
+  ####Üzenetet létrehozó:####
+  - Üzenetet tud létrehozni és módosítani.
+  - Saját üzeneteinek címet adhat meg és változtathatja.
+  - Saját üzeneteinek témát adhat meg és változtathatja.
+  - Saját üzeneteinek állapotot adhat meg (Pl. megoldva, megoldásra vár, stb.) és változtathatja. 
+  - Saját üzeneteit törölheti.
+  
+  ####Üzenetre reagáló:####
+  - Egy üzenetre reagálhat(Pl. like, dislike, stb.) és változtathatja a reakciót.
+  - Egy üzenethez hozzászólhat és saját hozzászólását megváltoztathatja.
+  
+- **Menü-hierarchiák:**
+  ####Belépés:####
+  * Név megadása
+  * Belépés
+  
+  ####Hírfolyam:####
+  * Üzenet létrehozás 
+  * Keresés
+  * Üzenet megnyitás
+  * Kilépés
+  
+  ####Üzenet:####
+  * Reagálás
+  * Hozzászólás
+  * Visszalépés a hírfolyamba
 
 Fizikai környezet
 -----------------
