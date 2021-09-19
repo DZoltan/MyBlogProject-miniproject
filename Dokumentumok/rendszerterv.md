@@ -59,7 +59,7 @@ Funkcionális terv
 
 Fizikai környezet
 -----------------
-- A program a 17 es javaban készül, ami az új megjelenés ellenére egy LTE verzió, tehát hosszútávon támogatott. Szükség van különböző beimportált projektek (pl. Jackson a JSON kezeléshez) kezelésére, amit az Apache Maven valósít meg.
+- A program a 17 es javaban készül, ami az új megjelenés ellenére egy LTS verzió, tehát hosszútávon támogatott. Szükség van különböző beimportált projektek (pl. Jackson a JSON kezeléshez) kezelésére, amit az Apache Maven valósít meg.
 - A grafikus megjelenítést a Java Swingel valósítjuk meg. 
 - Nincs szükség továbbá semmilyen hálózati beállításra, leszámítva, hogy el kell érnie a JSON fájlt a programnak. Ezért szükséges a folyamatos internetkapcsolat.
 - A programnak futás közben minimális erőforrásra van szüksége, a tároláshoz szükséges lemezterület elhanyagolható.
