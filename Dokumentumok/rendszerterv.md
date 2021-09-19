@@ -55,7 +55,6 @@ Funkcionális terv
   - Saját üzeneteit törölheti.
   
   #### Üzenetre reagáló: ####
-  - Egy üzenetre reagálhat(Pl. like, dislike, stb.) és változtathatja a reakciót.
   - Egy üzenethez hozzászólhat és saját hozzászólását megváltoztathatja.
   
 - **Menü-hierarchiák:**
