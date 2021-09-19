@@ -5,6 +5,11 @@ A rendszer célja
 -----------------
 - A vállalati kommuniáció, információ  megosztsás lebonyolítása. Felhasználók regisztrálása, névhez kapcsolása a vállalati környezetből beléptetés, kiléptetés előre megadott felhasználó, jelszó párossal. Problémák, ötletek meg vitatására szolgáló hífolyam létrehozása, valamint az ebben való kereshetőség, rendezés. 
 
+- Egy olyan oldal, amely segíti a fejlesztő csapatok munkatársai között a kommunikációt, valamint egy egységes
+rendszert biztosí a vállalat számára. 
+- A fejlesztők megtudják osztani ötleteiket, problémáikat és megoldásaikat egy hírfolyamon, amelyekre kollégáik reagálnak, kommentelnek hozzá így segítve a fejlesztési menet fliuditását. A üzenetek időrendben egy hírfolyamon vannak közzétéve. Az üzenetek állapotát meg lehet adni, vagyis megoldásra vár, megoldott, folyamatban, stb.  
+- Különböző témákat lehet rendelni az üzenetekhez, amelyek alapján szűrni és keresni lehet. Színes cimkékel lehet jelezni a különböző témákat.
+
 Projektterv
 ------------
 
