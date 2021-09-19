@@ -33,13 +33,13 @@ K02 Könnyen kezelhető felület
 K03 Név megadása
 	- A felhasználók megadhassák nevüket, amit kijelez ha bejegyzést, vagy kommentet írnak
 K04 Operácoósrendszer függetlenség
-	-Az elkészített rendszert, első sorban Windows-on és Linux-on szeretnénk használni
+	- Az elkészített rendszert, első sorban Windows-on és Linux-on szeretnénk használni
 K05 Dátummal ellátott bejegyzések
-	-A bejegyzésnél legyen látható, hogy ki írta és hogy mikor
+	- A bejegyzésnél legyen látható, hogy ki írta és hogy mikor
 K06 Komment lehetőség
-	-A bejegyzéshez lehessen kommentelni bármelyik felhasználónak
+	- A bejegyzéshez lehessen kommentelni bármelyik felhasználónak
 K07 Adatok mellőzése
-	-A rendszer ne kérjen be semmilyen adatot a felhasználótól, az általa megadott neven kívül
+	- A rendszer ne kérjen be semmilyen adatot a felhasználótól, az általa megadott neven kívül
 
 Funkcionális terv
 -------------------
