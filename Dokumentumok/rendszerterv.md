@@ -30,29 +30,29 @@ Funkcionális terv
   i. Üzenetet létrehozó
   ii. Üzenetre reagáló
 - **Rendszerszerhasználati esetek és lefutásaik:**
-  ####Üzenetet létrehozó:####
+  #### Üzenetet létrehozó: ####
   - Üzenetet tud létrehozni és módosítani.
   - Saját üzeneteinek címet adhat meg és változtathatja.
   - Saját üzeneteinek témát adhat meg és változtathatja.
   - Saját üzeneteinek állapotot adhat meg (Pl. megoldva, megoldásra vár, stb.) és változtathatja. 
   - Saját üzeneteit törölheti.
   
-  ####Üzenetre reagáló:####
+  #### Üzenetre reagáló: ####
   - Egy üzenetre reagálhat(Pl. like, dislike, stb.) és változtathatja a reakciót.
   - Egy üzenethez hozzászólhat és saját hozzászólását megváltoztathatja.
   
 - **Menü-hierarchiák:**
-  ####Belépés:####
+  #### Belépés: ####
   * Név megadása
   * Belépés
   
-  ####Hírfolyam:####
+  #### Hírfolyam: ####
   * Üzenet létrehozás 
   * Keresés
   * Üzenet megnyitás
   * Kilépés
   
-  ####Üzenet:####
+  #### Üzenet: ####
   * Reagálás
   * Hozzászólás
   * Visszalépés a hírfolyamba
