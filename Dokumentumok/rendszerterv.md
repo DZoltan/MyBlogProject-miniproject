@@ -21,6 +21,8 @@ Projektterv
     1. A dokumentációk elkészítese jelenti a fejlesztés első mérföldkövét, ezzel párhuazamosan zajlanak a főbb funkciók kialakításai. 
     2. A fejlesztés legnagyobb részét teszi ki ez a szekció. Ha a főbb funkciók működnek, szükség lesz a tesztelésére is ezeknek a funkcióknak. Ennél a mérföldkőnél rendelkezésére         fog állni a program váza, illetve működőképes lesz. 
     3. A következő, utolsó, etapban pedig a kényelmi funkciók, illetve a dizájn kerül beépítésre.
+- ![fejdisz](https://user-images.githubusercontent.com/55513932/133988801-a45bb1cd-6845-40b7-9565-795e77a15d73.png)
+
 
 Üzleti folyamatok modellje
 ---------------------------
