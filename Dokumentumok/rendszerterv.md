@@ -19,6 +19,7 @@ Projektterv
 
 Üzleti folyamatok modellje
 ---------------------------
+  ![Üzleti folyamatok modellje](uzleti_folyamatok_modellje.png)
 
 Követelmények
 --------------
