@@ -11,6 +11,8 @@ import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.VBox;
 
 import java.awt.*;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 
 import static javafx.geometry.Pos.CENTER;
 
@@ -46,12 +48,19 @@ public class PostController {
         alert.showAndWait();
     }
 
-    public void addNodeToSP(){
+    public void addNodeToSP() {
         VBox root = new VBox();
         root.setSpacing(10);
         root.setPadding(new Insets(10));
         for (int i = 0; i < 50; i++){
-            NodePanel node = new NodePanel();
+            NodePanel node = null;
+            try {
+                node = new NodePanel();
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
             root.getChildren().addAll(node);
         }
 
