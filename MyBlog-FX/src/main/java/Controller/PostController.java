@@ -4,17 +4,12 @@ import UIElements.NodePanel;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
-import javafx.geometry.Pos;
 import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.VBox;
-
-import java.awt.*;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
-import static javafx.geometry.Pos.CENTER;
 
 public class PostController {
 
@@ -27,9 +22,6 @@ public class PostController {
         alert.setHeaderText("Login");
         alert.showAndWait();
 
-        addNodeToSP();
-        addNodeToSP();
-        addNodeToSP();
         addNodeToSP();
 
     }
