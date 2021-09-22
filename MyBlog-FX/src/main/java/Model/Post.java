@@ -1,8 +1,10 @@
 package Model;
 
+import lombok.Data;
+
 import java.util.List;
 
-@lombok.Data
+@Data
 public class Post {
     private String id;
     private String title;

@@ -1,6 +1,12 @@
 package UIElements;
 
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
@@ -9,6 +15,9 @@ import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.geometry.*;
 import javafx.scene.text.Font;
+import javafx.stage.Stage;
+import lombok.SneakyThrows;
+
 import java.io.IOException;
 
 
@@ -56,6 +65,17 @@ public class NodePanel extends StackPane {
         expand.setGraphic(new ImageView(expandImage));
         this.getChildren().add(expand);
         this.setAlignment(expand, Pos.BOTTOM_RIGHT);
+        expand.setOnAction(new EventHandler<ActionEvent>() {
+            @SneakyThrows
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxs/post.fxml"));
+                Parent root = fxmlLoader.load();
+                stage.setScene(new Scene(root));
+                stage.show();
+            }
+        });
 
 
     }
