@@ -24,35 +24,47 @@ import java.io.IOException;
 public class NodePanel extends StackPane {
     Label title = new Label("Teszt");
     Label description = new Label();
+    Label author = new Label("Someone");
+    Label status = new Label("To-Do");
     Button delete = new Button();
     Button expand = new Button();
 
     public NodePanel() throws IOException {
         this.setBorder(new Border(new BorderStroke(Color.BLACK,
                 BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
-        this.setPrefSize(430,200);
-        this.setPadding(new Insets(5));
+        this.setPrefSize(440,200);
+        this.setPadding(new Insets(10));
 
         //Title
         title.setFont(new Font("Verdana", 20));
+        title.setPadding(new Insets(10,0,0,0));
         this.getChildren().add(title);
         this.setAlignment(title,Pos.TOP_CENTER);
 
         //Description
-        description.setFont(new Font("Verdana", 16));
+        description.setFont(new Font("Verdana", 14));
+        description.setPrefSize(340,120);
         description.setText("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla imperdiet, nunc ac consectetur pellentesque," +
                 " mi sem aliquam orci, at faucibus purus libero sed purus. Donec ut orci in augue suscipit lobortis. Sed maximus imperdiet augue. " +
-                "Suspendisse maximus dui augue, in porttitor tellus fringilla non. Sed vel orci dapibus, varius ipsum a, volutpat mauris. Ut consequat ipsum id " +
-                "gravida pulvinar. Fusce nec leo ut metus egestas scelerisque ac ut dui. Vestibulum sagittis sem sed eros fringilla, eu sodales urna tempor. Aenean rutrum laoreet nisl, " +
-                "maximus ultricies nisi consequat sit amet. Aenean tincidunt tellus eget neque molestie ullamcorper. Integer aliquet dignissim bibendum.Lorem ipsum dolor sit amet, consectetur adipiscing elit. " +
-                "Nulla imperdiet, nunc ac consectetur pellentesque, mi sem aliquam orci, at faucibus purus libero sed purus. Donec ut orci in augue suscipit lobortis. Sed maximus imperdiet " +
-                "augue. Suspendisse maximus dui augue, in porttitor tellus fringilla non. Sed vel orci dapibus, varius ipsum a, volutpat mauris. Ut consequat ipsum id gravida pulvinar. " +
-                "Fusce nec leo ut metus egestas scelerisque ac ut dui. Vestibulum sagittis sem sed eros fringilla, eu sodales urna tempor. Aenean rutrum laoreet nisl, maximus ultricies nisi consequat sit amet." +
-                " Aenean tincidunt tellus eget neque molestie ullamcorper. Integer aliquet dignissim bibendum.");
+                "Suspendisse maximus dui augue, in porttitor tellus fringilla non. Donec ut orci in augue suscipit lobortis. Sed maximus imperdiet augue." +
+                "Suspendisse maximus dui augue, in porttitor tellus fringilla non. Donec ut orci in augue suscipit lobortis. Sed maximus imperdiet augue. " +
+                "Suspendisse maximus dui augue, in porttitor tellus fringilla non.");
         description.setWrapText(true);
         description.setPadding(new Insets(15));
         this.getChildren().add(description);
         this.setAlignment(description,Pos.CENTER);
+
+        //author
+        author.setFont(new Font("Arial", 16));
+        author.setPadding(new Insets(0,60,25,0));
+        this.getChildren().add(author);
+        this.setAlignment(author,Pos.BOTTOM_RIGHT);
+
+        //status
+        status.setFont(new Font("Arial", 20));
+        status.setPadding(new Insets(10,0,0,10));
+        this.getChildren().add(status);
+        this.setAlignment(status, Pos.TOP_LEFT);
 
         //delete button
         Image deleteImage = new Image(this.getClass().getResourceAsStream("/imgs/delete.png"));
