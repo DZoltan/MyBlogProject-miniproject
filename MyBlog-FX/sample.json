@@ -1,0 +1,46 @@
+{
+  "posts" : [
+    { "id": 1,
+      "title": "Example",
+      "user": "Ruben",
+      "date":  "22/09/2021",
+      "status":  "done",
+      "description": "Sample post",
+      "comments": [
+        { "id": 1, "user": "Zoli", "date": "22/09/2021", "description": "Very nice!"},
+        { "id": 2, "user": "Krisz", "date": "22/09/2021", "description": "Nice!"},
+        { "id": 3, "user": "Csaba", "date": "22/09/2021", "description": "Very good!"},
+        { "id": 4, "user": "Márk", "date": "22/09/2021", "description": "Good!"}
+      ]
+    },
+    { "id": 2,
+      "title": "Example 2.0",
+      "user": "Zoli",
+      "date":  "23/09/2021",
+      "status":  "In progress",
+      "description": "Sample post 2.0",
+      "comments": [
+        { "id": 1,
+          "user": "Ruben",
+          "date": "22/09/2021",
+          "description": "Very nice!"
+        },
+        { "id": 2,
+          "user": "Krisz",
+          "date": "22/09/2021",
+          "description": "Nice!"
+        },
+        { "id": 3,
+          "user": "Csaba",
+          "date": "22/09/2021",
+          "description": "Very good!"
+        },
+        { "id": 4,
+          "user": "Márk",
+          "date": "22/09/2021",
+          "description": "Good!"
+        }
+      ]
+    }
+  ]
+}
