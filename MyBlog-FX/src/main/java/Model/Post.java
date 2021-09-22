@@ -10,7 +10,7 @@ public class Post {
     private String title;
     private String user;
     private String date;
-    private String status;
+    private Status status;
     private String description;
     private List<Comment> comments;
 
