@@ -14,6 +14,8 @@ Vágyálomrendszer leírása
 - Különböző témákat lehet rendelni az üzenetekhez, amelyek alapján szűrni és keresni lehet. Színes cimkékel lehet jelezni a különböző témákat.
 - Lehetőség van reagálni és hozzászólni a kiírt üzenetekre. 
 - Meg lehet adni az üzenet állapotát. (megoldásra vár, megoldott, folyamatban, stb.)
+- ![fejdisz](https://user-images.githubusercontent.com/55513932/133985611-eb844a9e-db1c-4f54-af7b-169b4762519c.png)
+
 
 Jelenlegi üzleti folyamatok modellje
 ------------------------------------
