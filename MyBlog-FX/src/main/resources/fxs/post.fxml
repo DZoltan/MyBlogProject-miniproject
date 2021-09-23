@@ -8,7 +8,6 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
 
 <GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.CommentController">
   <columnConstraints>
@@ -26,12 +25,9 @@
             <VBox prefHeight="447.0" prefWidth="594.0" />
          </content>
       </ScrollPane>
-       <Button onAction="#backToPosts" text="Vissza" GridPane.halignment="RIGHT" GridPane.rowIndex="0" />
+       <Button fx:id="backButton" onAction="#backToPosts" text="Vissza" GridPane.halignment="RIGHT" GridPane.rowIndex="0" />
        <Label alignment="CENTER" contentDisplay="CENTER" text="status" GridPane.halignment="CENTER" GridPane.rowIndex="0" />
-       <Label alignment="CENTER" contentDisplay="CENTER" text="author" GridPane.halignment="LEFT" GridPane.rowIndex="0">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font></Label>
+       <Label alignment="CENTER" contentDisplay="CENTER" text="author" GridPane.halignment="LEFT" GridPane.rowIndex="0" />
 
    </children>
 </GridPane>
