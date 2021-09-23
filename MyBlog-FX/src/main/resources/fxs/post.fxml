@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ButtonBar?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
@@ -11,8 +9,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="600.0"
-          xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/16" fx:controller="Controller.CommentController">
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.CommentController">
   <columnConstraints>
     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
   </columnConstraints>
@@ -28,9 +25,9 @@
             <VBox prefHeight="447.0" prefWidth="594.0" />
          </content>
       </ScrollPane>
-       <Button  text="Vissza" GridPane.halignment="RIGHT"  GridPane.rowIndex="0" onAction="#backToPosts"/>
+       <Button fx:id="backButton" onAction="#backToPosts" text="Vissza" GridPane.halignment="RIGHT" GridPane.rowIndex="0" />
        <Label alignment="CENTER" contentDisplay="CENTER" text="status" GridPane.halignment="CENTER" GridPane.rowIndex="0" />
-       <Label alignment="CENTER" contentDisplay="CENTER" text="author" GridPane.halignment="LEFT"  GridPane.rowIndex="0"/>
+       <Label alignment="CENTER" contentDisplay="CENTER" text="author" GridPane.halignment="LEFT" GridPane.rowIndex="0" />
 
    </children>
 </GridPane>

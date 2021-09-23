@@ -1,46 +1,37 @@
-{
-  "posts" : [
-    { "id": 1,
-      "title": "Example",
-      "user": "Ruben",
-      "date":  "22/09/2021",
-      "status":  "done",
-      "description": "Sample post",
-      "comments": [
-        { "id": 1, "user": "Zoli", "date": "22/09/2021", "description": "Very nice!"},
-        { "id": 2, "user": "Krisz", "date": "22/09/2021", "description": "Nice!"},
-        { "id": 3, "user": "Csaba", "date": "22/09/2021", "description": "Very good!"},
-        { "id": 4, "user": "Márk", "date": "22/09/2021", "description": "Good!"}
-      ]
-    },
-    { "id": 2,
-      "title": "Example 2.0",
-      "user": "Zoli",
-      "date":  "23/09/2021",
-      "status":  "In progress",
-      "description": "Sample post 2.0",
-      "comments": [
-        { "id": 1,
-          "user": "Ruben",
-          "date": "22/09/2021",
-          "description": "Very nice!"
-        },
-        { "id": 2,
-          "user": "Krisz",
-          "date": "22/09/2021",
-          "description": "Nice!"
-        },
-        { "id": 3,
-          "user": "Csaba",
-          "date": "22/09/2021",
-          "description": "Very good!"
-        },
-        { "id": 4,
-          "user": "Márk",
-          "date": "22/09/2021",
-          "description": "Good!"
-        }
-      ]
-    }
-  ]
-}
+[ {
+  "id" : "1",
+  "title" : "Testing",
+  "user" : "Pista",
+  "date" : "2021",
+  "status" : "IN_PROGRESS",
+  "description" : "Serializálás tesztelés",
+  "comments" : [ {
+    "id" : "1",
+    "user" : "Laci",
+    "date" : "2021",
+    "description" : "Szép voooooolt."
+  }, {
+    "id" : "1",
+    "user" : "Arpi",
+    "date" : "2021",
+    "description" : "Szép volt."
+  } ]
+}, {
+  "id" : "2",
+  "title" : "Test",
+  "user" : "Géza",
+  "date" : "2021",
+  "status" : "DONE",
+  "description" : "Serializáció",
+  "comments" : [ {
+    "id" : "1",
+    "user" : "Laci",
+    "date" : "2021",
+    "description" : "Szép voooooolt."
+  }, {
+    "id" : "1",
+    "user" : "Arpi",
+    "date" : "2021",
+    "description" : "Szép volt."
+  } ]
+} ]

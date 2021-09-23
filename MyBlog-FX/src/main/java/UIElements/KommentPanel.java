@@ -1,6 +1,7 @@
 package UIElements;
 
-import javafx.scene.layout.StackPane;
+import javafx.scene.layout.*;
+
 
 public class KommentPanel extends StackPane {
 
