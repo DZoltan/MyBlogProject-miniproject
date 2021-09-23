@@ -1,3 +1,5 @@
+package Model;
+
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -18,7 +20,7 @@ public class SeriDeseri {
     }
 
     public static List DeSerialize(File JSONfile) throws IOException {
-        return objectMapper.readValue(JSONfile, new TypeReference<List>(){});
+        return objectMapper.readValue(JSONfile, new TypeReference<List<Post>>(){});
     }
 
 }
