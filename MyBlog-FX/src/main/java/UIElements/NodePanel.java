@@ -1,10 +1,10 @@
 package UIElements;
 
+import Model.Post;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -22,14 +22,14 @@ import java.io.IOException;
 
 
 public class NodePanel extends StackPane {
-    Label title = new Label("Teszt");
+    Label title = new Label();
     Label description = new Label();
     Label author = new Label("Someone");
     Label status = new Label("To-Do");
     Button delete = new Button();
     Button expand = new Button();
 
-    public NodePanel() throws IOException {
+    public NodePanel(Post post) throws IOException {
         this.setBorder(new Border(new BorderStroke(Color.BLACK,
                 BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
         this.setPrefSize(440,200);
@@ -82,9 +82,9 @@ public class NodePanel extends StackPane {
             @Override
             public void handle(ActionEvent actionEvent) {
                 Stage stage = new Stage();
-                System.out.println(getClass().getResource("/fxs/post.fxml").getPath());
+                System.out.println(getClass().getResource("/fxs/postWindow.fxml").getPath());
                 stage.setTitle("Post");
-                Parent root = FXMLLoader.load(getClass().getResource("/fxs/post.fxml"));
+                Parent root = FXMLLoader.load(getClass().getResource("/fxs/postWindow.fxml"));
                 stage.setScene(new Scene(root));
                 stage.setResizable(false);
                 stage.show();
