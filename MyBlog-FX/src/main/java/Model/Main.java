@@ -1,11 +1,12 @@
 package Model;
 
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.ObjectMapper;
-
 import java.io.File;
 import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 public class Main {
@@ -22,21 +23,24 @@ public class Main {
         ArrayList<Comment> listComment = new ArrayList<Comment>();
         ArrayList<Post> listPost = new ArrayList<Post>();
 
+        Date date = Calendar.getInstance().getTime();
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd hh:mm:ss");
+
         comment.setId("1");
         comment.setUser("Laci");
-        comment.setDate("2021");
+        comment.setDate(dateFormat.format(date));
         comment.setDescription("Szép voooooolt.");
 
         comment1.setId("1");
         comment1.setUser("Arpi");
-        comment1.setDate("2021");
+        comment1.setDate(dateFormat.format(date));
         comment1.setDescription("Szép volt.");
 
         listComment.add(comment);
         listComment.add(comment1);
 
         post.setTitle("Testing");
-        post.setDate("2021");
+        post.setDate(dateFormat.format(date));
         post.setStatus(Status.IN_PROGRESS);
         post.setDescription("Serializálás tesztelés");
         post.setId("1");
@@ -44,7 +48,7 @@ public class Main {
         post.setComments(listComment);
 
         post1.setTitle("Test");
-        post1.setDate("2021");
+        post1.setDate(dateFormat.format(date));
         post1.setStatus(Status.DONE);
         post1.setDescription("Serializáció");
         post1.setId("2");
