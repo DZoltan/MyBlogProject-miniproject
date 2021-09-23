@@ -81,10 +81,12 @@ public class NodePanel extends StackPane {
             @SneakyThrows
             @Override
             public void handle(ActionEvent actionEvent) {
-                Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxs/post.fxml"));
-                Parent root = fxmlLoader.load();
+                Stage stage = new Stage();
+                System.out.println(getClass().getResource("/fxs/post.fxml").getPath());
+                stage.setTitle("Post");
+                Parent root = FXMLLoader.load(getClass().getResource("/fxs/post.fxml"));
                 stage.setScene(new Scene(root));
+                stage.setResizable(false);
                 stage.show();
             }
         });
