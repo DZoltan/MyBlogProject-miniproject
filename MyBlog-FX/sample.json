@@ -2,36 +2,36 @@
   "id" : "1",
   "title" : "Testing",
   "user" : "Pista",
-  "date" : "2021",
+  "date" : "2021-20-23 11:20:48",
   "status" : "IN_PROGRESS",
   "description" : "Serializálás tesztelés",
   "comments" : [ {
     "id" : "1",
     "user" : "Laci",
-    "date" : "2021",
+    "date" : "2021-20-23 11:20:48",
     "description" : "Szép voooooolt."
   }, {
     "id" : "1",
     "user" : "Arpi",
-    "date" : "2021",
+    "date" : "2021-20-23 11:20:48",
     "description" : "Szép volt."
   } ]
 }, {
   "id" : "2",
   "title" : "Test",
   "user" : "Géza",
-  "date" : "2021",
+  "date" : "2021-20-23 11:20:48",
   "status" : "DONE",
   "description" : "Serializáció",
   "comments" : [ {
     "id" : "1",
     "user" : "Laci",
-    "date" : "2021",
+    "date" : "2021-20-23 11:20:48",
     "description" : "Szép voooooolt."
   }, {
     "id" : "1",
     "user" : "Arpi",
-    "date" : "2021",
+    "date" : "2021-20-23 11:20:48",
     "description" : "Szép volt."
   } ]
 } ]

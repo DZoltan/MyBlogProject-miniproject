@@ -1,6 +1,7 @@
 package UIElements;
 
 import Model.Post;
+import com.sun.prism.shader.Solid_Color_Loader;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
@@ -14,6 +15,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.geometry.*;
+import javafx.scene.paint.Paint;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import lombok.SneakyThrows;
@@ -24,12 +26,19 @@ import java.io.IOException;
 public class NodePanel extends StackPane {
     Label title = new Label();
     Label description = new Label();
-    Label author = new Label("Someone");
-    Label status = new Label("To-Do");
+    Label author = new Label();
+    Label status = new Label();
     Button delete = new Button();
     Button expand = new Button();
 
     public NodePanel(Post post) throws IOException {
+
+        //Initialize data
+        this.title.setText(post.getTitle());
+        this.author.setText(post.getUser());
+        this.description.setText(post.getDescription());
+        this.status.setText(post.getStatus().toString());
+
         this.setBorder(new Border(new BorderStroke(Color.BLACK,
                 BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
         this.setPrefSize(440,200);
@@ -44,11 +53,6 @@ public class NodePanel extends StackPane {
         //Description
         description.setFont(new Font("Verdana", 14));
         description.setPrefSize(340,120);
-        description.setText("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla imperdiet, nunc ac consectetur pellentesque," +
-                " mi sem aliquam orci, at faucibus purus libero sed purus. Donec ut orci in augue suscipit lobortis. Sed maximus imperdiet augue. " +
-                "Suspendisse maximus dui augue, in porttitor tellus fringilla non. Donec ut orci in augue suscipit lobortis. Sed maximus imperdiet augue." +
-                "Suspendisse maximus dui augue, in porttitor tellus fringilla non. Donec ut orci in augue suscipit lobortis. Sed maximus imperdiet augue. " +
-                "Suspendisse maximus dui augue, in porttitor tellus fringilla non.");
         description.setWrapText(true);
         description.setPadding(new Insets(15));
         this.getChildren().add(description);
