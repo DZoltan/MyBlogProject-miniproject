@@ -1,5 +1,6 @@
 package UIElements;
 
+import Controller.CommentController;
 import Model.Post;
 import com.sun.prism.shader.Solid_Color_Loader;
 import javafx.event.ActionEvent;
@@ -92,6 +93,7 @@ public class NodePanel extends StackPane {
                 stage.setScene(new Scene(root));
                 stage.setResizable(false);
                 stage.show();
+                new KommentPanel(post);
             }
         });
 

@@ -55,12 +55,9 @@ public class PostController {
         seriDeseri = new SeriDeseri();
         ArrayList<Post> postList = seriDeseri.DeSerialize(new File("sample.json"));
 
-
-        NodePanel node = null;
-
             try {
                 for(Post post: postList) {
-                    node = new NodePanel(post);
+                    NodePanel node = new NodePanel(post);
                     root.getChildren().addAll(node);
                 }
             } catch (FileNotFoundException e) {
