@@ -13,6 +13,7 @@ import javafx.scene.layout.VBox;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -52,20 +53,19 @@ public class PostController {
         root.setPadding(new Insets(10));
 
         seriDeseri = new SeriDeseri();
-        List postList = seriDeseri.DeSerialize(new File("sample.json"));
+        ArrayList<Post> postList = seriDeseri.DeSerialize(new File("sample.json"));
 
-        for (int i = 0; i < 10; i++){
-            NodePanel node = null;
-            Post post = (Post) postList.iterator().next();
             try {
-                node = new NodePanel(post);
+                for(Post post: postList) {
+                    NodePanel node = new NodePanel(post);
+                    root.getChildren().addAll(node);
+                }
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            root.getChildren().addAll(node);
-        }
+
 
 
         scroll.setContent(root);
