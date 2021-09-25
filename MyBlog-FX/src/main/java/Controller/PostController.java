@@ -190,6 +190,26 @@ public class PostController {
         addNodeToSP();
 
     }
+    
+    
+    public void listDialog() {
+    List<String> choices = new ArrayList<>();
+    choices.add("TO_DO");
+    choices.add("IN_PROGRESS");
+    choices.add("DONE");
+
+    ChoiceDialog<String> dialog = new ChoiceDialog<>(choices);
+    dialog.setTitle("Opciók");
+    dialog.setHeaderText(null);
+    dialog.setContentText("Válasszon az alábbi opciók közül");
+
+    Optional<String> result = dialog.showAndWait();
+    if (result.isPresent()){
+         System.out.println("A választása:" + result.get());
+    }
+
+}
+
                         
         
 
