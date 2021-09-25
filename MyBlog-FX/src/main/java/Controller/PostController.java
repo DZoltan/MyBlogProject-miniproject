@@ -1,34 +1,66 @@
 package Controller;
 
+import Model.Comment;
 import Model.Post;
 import Model.SeriDeseri;
+import Model.Status;
 import UIElements.NodePanel;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ScrollPane;
+import javafx.scene.control.*;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
+import javafx.util.Pair;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 
 public class PostController {
 
     @FXML
     private ScrollPane scroll;
-    private SeriDeseri seriDeseri;
 
-    public void login(ActionEvent actionEvent) throws IOException {
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Information Dialog");
-        alert.setHeaderText("Login");
-        alert.showAndWait();
+    @FXML
+    private Label welcome;
+    @FXML
+    private Button logoutBtn;
+    @FXML
+    private Button searchBtn;
 
+    public String userName = new String();
+    public SeriDeseri seriDeseri = new SeriDeseri();
+    public List<Post> postList = new ArrayList<>();
+
+    public void init() {
+        if(userName.isBlank()){
+            welcome.setText("Kérem jelentkezzen be!");
+        }
+        try {
+            postList = seriDeseri.DeSerialize(new File("sample.json"));
+            System.out.println(postList.size());
+
+        }
+        catch (IOException e){
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setHeaderText("Elérési hiba");
+            alert.setContentText("Az adatbázis nem elérhető!");
+            alert.showAndWait();
+        }
+    }
+
+
+    public void login(ActionEvent actionEvent) {
+        loginDialog();
+        searchBtn.setVisible(true);
+        logoutBtn.setVisible(true);
         addNodeToSP();
 
     }
@@ -41,103 +73,124 @@ public class PostController {
     }
 
     public void logout(ActionEvent actionEvent) {
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Information Dialog");
-        alert.setHeaderText("logout");
-        alert.showAndWait();
+        userName = "";
+        scroll.setContent(null);
+        searchBtn.setVisible(false);
+        logoutBtn.setVisible(false);
+        init();
     }
 
-    public void addNodeToSP() throws IOException {
+
+
+    public void addNodeToSP() {
         VBox root = new VBox();
         root.setSpacing(10);
         root.setPadding(new Insets(10));
 
-        seriDeseri = new SeriDeseri();
-        ArrayList<Post> postList = seriDeseri.DeSerialize(new File("sample.json"));
-
-            try {
-                for(Post post: postList) {
-                    NodePanel node = new NodePanel(post);
-                    root.getChildren().addAll(node);
-                }
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
-                e.printStackTrace();
+        try {
+            for (Post post : postList) {
+                NodePanel node = new NodePanel(post, this);
+                root.getChildren().addAll(node);
             }
-
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
 
         scroll.setContent(root);
-        
-        
-        
-        
-        
-     //Dialog ablak (logdialog = login dialog)        
-TextInputDialog logdialog = new TextInputDialog();
-logdialog.setTitle("Belépés");
-logdialog.setHeaderText(null);
-logdialog.setContentText("Kérem adja meg a nevét:");
 
-//Szöveg bekérése és visszaadása
-Optional<String> result = logdialog.showAndWait();
-if (result.isPresent())
-    System.out.println("Your name: " + result.get());
-
-
+    }
+        
+        
+        
+     //Dialog ablak (logdialog = login dialog)
+     public void loginDialog() {
+        TextInputDialog logdialog = new TextInputDialog();
+        logdialog.setTitle("Belépés");
+        logdialog.setHeaderText(null);
+        logdialog.setContentText("Kérem adja meg a nevét:");
+         Optional<String> result = logdialog.showAndWait();
+         if (result.isPresent())
+             userName = result.orElseThrow();
+             welcome.setText("Üdvözlünk, " + userName);
+    }
 
 
 
 // Törlés alert (delalert)
-Alert delalert = new Alert(AlertType.CONFIRMATION);
-delalert.setTitle("Törlés");
-delalert.setHeaderText(null);
-delalert.setContentText("A ... törlődni fog, biztosan ezt szeretnéd?");
+    public void deleteDialog(Post post) {
+        Alert delalert = new Alert(Alert.AlertType.CONFIRMATION);
+        delalert.setTitle("Törlés");
+        delalert.setHeaderText(null);
+        delalert.setContentText("A " + post.getTitle() + " törlődni fog, biztosan ezt szeretnéd?");
 
-Optional<ButtonType> result = delalert.showAndWait();
-if (result.get() == ButtonType.OK){
-    // A felhasználó megnyomta az OK gombot
-} else {
-    // A felhasználó megnyomta a Cancel gombot, vagy bezárta az ablakot
-}
+        Optional<ButtonType> result = delalert.showAndWait();
+        if (result.get() == ButtonType.OK) {
+            postList.remove(post);
+            seriDeseri.Serialize(postList);
+            scroll.setContent(null);
+            addNodeToSP();
+        }
+    }
 
+/*
 
-
-// 2 szöveges dialog
-Dialog<Pair<String, String>> dialog = new Dialog<>();
-dialog.setTitle("Bejegyzés");
-dialog.setHeaderText(null);
-
-
-// Gombok megadása
-ButtonType doneButton = new ButtonType("Kész", ButtonData.OK_DONE);
-dialog.getDialogPane().getButtonTypes().addAll(doneButton, ButtonType.CANCEL);
 
 // Szöveg lehetőségek elészítése és hozzáadása
-GridPane grid = new GridPane();
-grid.setHgap(10);
-grid.setVgap(10);
-grid.setPadding(new Insets(20, 150, 10, 10));
+*/
+    public void newPost() {
+        Dialog<Pair<String, String>> dialog = new Dialog<>();
+        dialog.setTitle("Bejegyzés");
+        dialog.setHeaderText(null);
 
-TextField title = new TextField();
-title.setPromptText("Cím");
-TextField description = new TextField();
-description.setPromptText("Leírás");
+        ButtonType doneButton = new ButtonType("Kész", ButtonBar.ButtonData.OK_DONE);
+        dialog.getDialogPane().getButtonTypes().addAll(doneButton, ButtonType.CANCEL);
 
-grid.add(new Label("Cím:"), 0, 0);
-grid.add(title, 1, 0);
-grid.add(new Label("Leírás:"), 0, 1);
-grid.add(description, 1, 1);
+        GridPane grid = new GridPane();
+        grid.setPrefSize(300,200);
+        grid.setPadding(new Insets(10, 10, 10, 10));
+
+        TextField title = new TextField();
+        title.setPromptText("Cím");
+        TextArea description = new TextArea();
+        description.setPrefSize(200,200);
+        description.setWrapText(true);
+        description.setPromptText("Leírás");
+
+        grid.add(new Label("Cím:"), 0, 0);
+        grid.add(title, 1, 0);
+        grid.add(new Label("Leírás:"), 0, 1);
+        grid.add(description, 1, 1);
 
 
-dialog.getDialogPane().setContent(grid);
+        dialog.getDialogPane().setContent(grid);
 
+        Optional<Pair<String, String>> result = dialog.showAndWait();
 
-Optional<Pair<String, String>> result = dialog.showAndWait();   
-        
-        
+        setNewPost(title.getText(), description.getText());
+    }
+
+    public int getNewId(){
+        if(postList.size() == 0) {
+            return 0;
+        }
+        else {
+            return postList.stream().mapToInt(Post::getId).max().orElseThrow() + 1;
+        }
+    }
+
+    public void setNewPost(String title, String description){
+        List<Comment> emptyComment = new ArrayList<>();
+        Post newPost = new Post(getNewId(), title, userName, LocalDate.now().toString(), Status.TO_DO, description, emptyComment);
+        postList.add(newPost);
+        seriDeseri.Serialize(postList);
+        scroll.setContent(null);
+        addNodeToSP();
+
+    }
                         
         
-    }
+
 }
