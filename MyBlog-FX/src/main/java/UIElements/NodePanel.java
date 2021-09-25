@@ -1,6 +1,7 @@
 package UIElements;
 
 import Controller.CommentController;
+import Controller.PostController;
 import Model.Post;
 import com.sun.prism.shader.Solid_Color_Loader;
 import javafx.event.ActionEvent;
@@ -11,6 +12,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
@@ -32,7 +34,7 @@ public class NodePanel extends StackPane {
     Button delete = new Button();
     Button expand = new Button();
 
-    public NodePanel(Post post) throws IOException {
+    public NodePanel(Post post, PostController postController) throws IOException {
 
         //Initialize data
         this.title.setText(post.getTitle());
@@ -71,12 +73,20 @@ public class NodePanel extends StackPane {
         this.getChildren().add(status);
         this.setAlignment(status, Pos.TOP_LEFT);
 
-        //delete button
-        Image deleteImage = new Image(this.getClass().getResourceAsStream("/imgs/delete.png"));
-        delete.setGraphic(new ImageView(deleteImage));
-        this.getChildren().add(delete);
-        this.setAlignment(delete, Pos.TOP_RIGHT);
 
+        if(post.getUser().compareTo(postController.userName) == 0) {
+            //delete button
+            Image deleteImage = new Image(this.getClass().getResourceAsStream("/imgs/delete.png"));
+            delete.setGraphic(new ImageView(deleteImage));
+            this.getChildren().add(delete);
+            this.setAlignment(delete, Pos.TOP_RIGHT);
+            delete.setOnAction(new EventHandler<ActionEvent>() {
+                @Override
+                public void handle(ActionEvent actionEvent) {
+                    postController.deleteDialog(post);
+                }
+            });
+        }
         //Expand button
         Image expandImage = new Image(this.getClass().getResourceAsStream("/imgs/expand.png"));
         expand.setGraphic(new ImageView(expandImage));
