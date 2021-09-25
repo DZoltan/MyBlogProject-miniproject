@@ -117,7 +117,6 @@ public class NodePanel extends StackPane {
                 stage.setScene(new Scene(root));
                 stage.setResizable(false);
                 stage.show();
-                new KommentPanel(post);
             }
         });
 
