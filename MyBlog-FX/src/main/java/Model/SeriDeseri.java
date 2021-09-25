@@ -14,7 +14,7 @@ public class SeriDeseri {
 
     public static void Serialize(List posts){
         try {
-            objectMapper.writerWithDefaultPrettyPrinter().writeValue(new File("Sample.json"), posts);
+            objectMapper.writerWithDefaultPrettyPrinter().writeValue(new File("sample.json"), posts);
         }
         catch (Exception e){}
     }

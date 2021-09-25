@@ -1,17 +1,9 @@
 [ {
   "id" : 0,
-  "title" : "teszt",
+  "title" : "kezdetnek",
   "user" : "Zoli",
   "date" : "2021-09-25",
   "status" : "TO_DO",
-  "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et magna sagittis ipsum ultricies porta. Nam ornare diam id sollicitudin rhoncus. Vestibulum placerat augue nec nisl varius, et suscipit enim ultrices. Curabitur placerat aliquam viverra. Mauris vel consectetur arcu. Pellentesque odio odio, elementum a rutrum id, consectetur in nisi. Sed.",
-  "comments" : [ ]
-}, {
-  "id" : 1,
-  "title" : "teszt2",
-  "user" : "Zoli",
-  "date" : "2021-09-25",
-  "status" : "TO_DO",
-  "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a molestie lectus, ac ornare dui. Phasellus cursus nisl eget nibh sodales tempor. Mauris consequat nisl magna, a volutpat sapien imperdiet mattis. Nullam eu risus tortor. Suspendisse in eleifend lacus. Sed auctor quam sit amet nunc accumsan interdum. Donec nisl tellus.",
+  "description" : "Minden kezdet nehéz",
   "comments" : [ ]
 } ]

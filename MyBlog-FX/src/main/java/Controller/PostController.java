@@ -5,9 +5,11 @@ import Model.Post;
 import Model.SeriDeseri;
 import Model.Status;
 import UIElements.NodePanel;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
@@ -17,10 +19,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 
 public class PostController {
@@ -34,10 +33,12 @@ public class PostController {
     private Button logoutBtn;
     @FXML
     private Button searchBtn;
+    @FXML
+    private Button newPostBtn;
 
     public String userName = new String();
     public SeriDeseri seriDeseri = new SeriDeseri();
-    public List<Post> postList = new ArrayList<>();
+    public ArrayList<Post> postList = new ArrayList<Post>();
 
     public void init() {
         if(userName.isBlank()){
@@ -45,23 +46,25 @@ public class PostController {
         }
         try {
             postList = seriDeseri.DeSerialize(new File("sample.json"));
-            System.out.println(postList.size());
 
         }
         catch (IOException e){
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setHeaderText("Elérési hiba");
-            alert.setContentText("Az adatbázis nem elérhető!");
+            alert.setContentText("Az adatbázis nem elérhető!" + e);
             alert.showAndWait();
+            System.out.println(e);
         }
     }
 
 
     public void login(ActionEvent actionEvent) {
-        loginDialog();
-        searchBtn.setVisible(true);
-        logoutBtn.setVisible(true);
-        addNodeToSP();
+        if(loginDialog()){
+            searchBtn.setVisible(true);
+            logoutBtn.setVisible(true);
+            newPostBtn.setVisible(true);
+            addNodeToSP();
+        }
 
     }
 
@@ -77,6 +80,7 @@ public class PostController {
         scroll.setContent(null);
         searchBtn.setVisible(false);
         logoutBtn.setVisible(false);
+        newPostBtn.setVisible(false);
         init();
     }
 
@@ -106,15 +110,19 @@ public class PostController {
         
         
      //Dialog ablak (logdialog = login dialog)
-     public void loginDialog() {
+     public boolean loginDialog() {
         TextInputDialog logdialog = new TextInputDialog();
         logdialog.setTitle("Belépés");
         logdialog.setHeaderText(null);
         logdialog.setContentText("Kérem adja meg a nevét:");
          Optional<String> result = logdialog.showAndWait();
-         if (result.isPresent())
+         if (!result.orElseThrow().isBlank()){
              userName = result.orElseThrow();
              welcome.setText("Üdvözlünk, " + userName);
+             return true;}
+         return false;
+
+
     }
 
 
@@ -177,13 +185,13 @@ public class PostController {
             return 0;
         }
         else {
-            return postList.stream().mapToInt(Post::getId).max().orElseThrow() + 1;
+            return postList.stream().mapToInt(Post::getId).max().orElseThrow();
         }
     }
 
     public void setNewPost(String title, String description){
         List<Comment> emptyComment = new ArrayList<>();
-        Post newPost = new Post(getNewId(), title, userName, LocalDate.now().toString(), Status.TO_DO, description, emptyComment);
+        Post newPost = new Post( getNewId(), title, userName, LocalDate.now().toString(), Status.TO_DO, description, emptyComment);
         postList.add(newPost);
         seriDeseri.Serialize(postList);
         scroll.setContent(null);
@@ -192,19 +200,20 @@ public class PostController {
     }
     
     
-    public void listDialog() {
-    List<String> choices = new ArrayList<>();
-    choices.add("TO_DO");
-    choices.add("IN_PROGRESS");
-    choices.add("DONE");
+    public void listDialog(Post post) {
 
-    ChoiceDialog<String> dialog = new ChoiceDialog<>(choices);
+    ChoiceDialog<Status> dialog = new ChoiceDialog<>();
+    dialog.getItems().addAll(Status.values());
     dialog.setTitle("Opciók");
     dialog.setHeaderText(null);
     dialog.setContentText("Válasszon az alábbi opciók közül");
 
-    Optional<String> result = dialog.showAndWait();
+    Optional<Status> result = dialog.showAndWait();
     if (result.isPresent()){
+        post.setStatus(result.orElseThrow());
+        seriDeseri.Serialize(postList);
+        scroll.setContent(null);
+        addNodeToSP();
          System.out.println("A választása:" + result.get());
     }
 
