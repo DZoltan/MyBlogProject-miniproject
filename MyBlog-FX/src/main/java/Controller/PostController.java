@@ -69,5 +69,75 @@ public class PostController {
 
 
         scroll.setContent(root);
+        
+        
+        
+        
+        
+     //Dialog ablak (logdialog = login dialog)        
+TextInputDialog logdialog = new TextInputDialog();
+logdialog.setTitle("Belépés");
+logdialog.setHeaderText(null);
+logdialog.setContentText("Kérem adja meg a nevét:");
+
+//Szöveg bekérése és visszaadása
+Optional<String> result = logdialog.showAndWait();
+if (result.isPresent())
+    System.out.println("Your name: " + result.get());
+
+
+
+
+
+// Törlés alert (delalert)
+Alert delalert = new Alert(AlertType.CONFIRMATION);
+delalert.setTitle("Törlés");
+delalert.setHeaderText(null);
+delalert.setContentText("A ... törlődni fog, biztosan ezt szeretnéd?");
+
+Optional<ButtonType> result = delalert.showAndWait();
+if (result.get() == ButtonType.OK){
+    // A felhasználó megnyomta az OK gombot
+} else {
+    // A felhasználó megnyomta a Cancel gombot, vagy bezárta az ablakot
+}
+
+
+
+// 2 szöveges dialog
+Dialog<Pair<String, String>> dialog = new Dialog<>();
+dialog.setTitle("Bejegyzés");
+dialog.setHeaderText(null);
+
+
+// Gombok megadása
+ButtonType doneButton = new ButtonType("Kész", ButtonData.OK_DONE);
+dialog.getDialogPane().getButtonTypes().addAll(doneButton, ButtonType.CANCEL);
+
+// Szöveg lehetőségek elészítése és hozzáadása
+GridPane grid = new GridPane();
+grid.setHgap(10);
+grid.setVgap(10);
+grid.setPadding(new Insets(20, 150, 10, 10));
+
+TextField title = new TextField();
+title.setPromptText("Cím");
+TextField description = new TextField();
+description.setPromptText("Leírás");
+
+grid.add(new Label("Cím:"), 0, 0);
+grid.add(title, 1, 0);
+grid.add(new Label("Leírás:"), 0, 1);
+grid.add(description, 1, 1);
+
+
+dialog.getDialogPane().setContent(grid);
+
+
+Optional<Pair<String, String>> result = dialog.showAndWait();   
+        
+        
+                        
+        
     }
 }
