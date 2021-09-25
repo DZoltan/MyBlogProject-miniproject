@@ -86,6 +86,17 @@ public class NodePanel extends StackPane {
                     postController.deleteDialog(post);
                 }
             });
+
+            //status modify
+            Button setStatus = new Button("Státusz módosítása");
+            this.getChildren().add(setStatus);
+            this.setAlignment(setStatus, Pos.BOTTOM_LEFT);
+            setStatus.setOnAction(new EventHandler<ActionEvent>() {
+                @Override
+                public void handle(ActionEvent actionEvent) {
+                    postController.listDialog(post);
+                }
+            });
         }
         //Expand button
         Image expandImage = new Image(this.getClass().getResourceAsStream("/imgs/expand.png"));
@@ -99,7 +110,10 @@ public class NodePanel extends StackPane {
                 Stage stage = new Stage();
                 System.out.println(getClass().getResource("/fxs/postWindow.fxml").getPath());
                 stage.setTitle("Post");
-                Parent root = FXMLLoader.load(getClass().getResource("/fxs/postWindow.fxml"));
+                FXMLLoader fxmlLoader = new FXMLLoader(CommentController.class.getResource("/fxs/postWindow.fxml"));
+                Parent root = fxmlLoader.load();
+                CommentController comment = fxmlLoader.<CommentController>getController();
+                comment.init();
                 stage.setScene(new Scene(root));
                 stage.setResizable(false);
                 stage.show();
