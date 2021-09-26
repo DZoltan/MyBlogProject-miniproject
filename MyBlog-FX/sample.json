@@ -6,4 +6,12 @@
   "status" : "TO_DO",
   "description" : "Minden kezdet nehéz",
   "comments" : [ ]
+}, {
+  "id" : 1,
+  "title" : "Folytatás",
+  "user" : "Ruben",
+  "date" : "2021-09-26",
+  "status" : "TO_DO",
+  "description" : "Haladás a cél felé",
+  "comments" : [ ]
 } ]

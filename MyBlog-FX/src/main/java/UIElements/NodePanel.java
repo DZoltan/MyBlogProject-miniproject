@@ -31,6 +31,7 @@ public class NodePanel extends StackPane {
     Label description = new Label();
     Label author = new Label();
     Label status = new Label();
+    Label date = new Label();
     Button delete = new Button();
     Button expand = new Button();
 
@@ -38,9 +39,10 @@ public class NodePanel extends StackPane {
 
         //Initialize data
         this.title.setText(post.getTitle());
-        this.author.setText(post.getUser());
+        this.author.setText("Írta: " + post.getUser());
         this.description.setText(post.getDescription());
         this.status.setText(post.getStatus().toString());
+        this.date.setText("Dátum: " + post.getDate());
 
         this.setBorder(new Border(new BorderStroke(Color.BLACK,
                 BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
@@ -72,6 +74,12 @@ public class NodePanel extends StackPane {
         status.setPadding(new Insets(10,0,0,10));
         this.getChildren().add(status);
         this.setAlignment(status, Pos.TOP_LEFT);
+
+        //date
+        date.setFont(new Font("Arial", 14));
+        date.setPadding(new Insets(0,60,10,0));
+        this.getChildren().add(date);
+        this.setAlignment(date,Pos.BOTTOM_RIGHT);
 
 
         if(post.getUser().compareTo(postController.userName) == 0) {
