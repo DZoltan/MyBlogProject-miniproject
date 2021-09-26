@@ -11,7 +11,23 @@
   "title" : "Folytatás",
   "user" : "Ruben",
   "date" : "2021-09-26",
-  "status" : "TO_DO",
+  "status" : "IN_PROGRESS",
   "description" : "Haladás a cél felé",
+  "comments" : [ ]
+}, {
+  "id" : 2,
+  "title" : "Kommentek",
+  "user" : "Ruben",
+  "date" : "2021-09-27",
+  "status" : "TO_DO",
+  "description" : "El kell készíteni a KommentPanelt.",
+  "comments" : [ ]
+}, {
+  "id" : 3,
+  "title" : "Keresés",
+  "user" : "Ruben",
+  "date" : "2021-09-27",
+  "status" : "DONE",
+  "description" : "Státusz alapján.",
   "comments" : [ ]
 } ]
