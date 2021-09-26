@@ -1,22 +1,21 @@
 package UIElements;
 
-import javafx.geometry.Pos;
-import javafx.scene.control.Button;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
+import Model.Comment;
+import Model.Post;
+import javafx.scene.control.Label;
 import javafx.scene.layout.*;
 
 
 public class KommentPanel extends StackPane {
-    Button back = new Button();
 
-    public KommentPanel() {
+    Label description = new Label();
+    Label author = new Label();
 
-        //back
-        Image backImage = new Image(this.getClass().getResourceAsStream("/imgs/back.png"));
-        back.setGraphic(new ImageView(backImage));
-        this.getChildren().add(back);
-        this.setAlignment(back, Pos.BOTTOM_RIGHT);
+    public KommentPanel(Comment comment){
 
+        //Initialize data
+        this.author.setText(comment.getUser());
+        this.description.setText(comment.getDescription());
     }
+
 }
