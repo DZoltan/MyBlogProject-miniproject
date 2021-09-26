@@ -13,6 +13,7 @@ import javafx.geometry.Pos;
 import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Font;
 import javafx.util.Pair;
 
 import java.io.File;
@@ -43,6 +44,7 @@ public class PostController {
     public void init() {
         if(userName.isBlank()){
             welcome.setText("Kérem jelentkezzen be!");
+            welcome.setFont(new Font("Arial", 20));
         }
         try {
             postList = seriDeseri.DeSerialize(new File("sample.json"));
@@ -119,6 +121,7 @@ public class PostController {
          if (!result.orElseThrow().isBlank()){
              userName = result.orElseThrow();
              welcome.setText("Üdvözlünk, " + userName);
+             welcome.setFont(new Font("Arial", 30));
              return true;}
          return false;
 
@@ -177,7 +180,9 @@ public class PostController {
 
         Optional<Pair<String, String>> result = dialog.showAndWait();
 
-        setNewPost(title.getText(), description.getText());
+        if(title.getText() != "" && description.getText() != "") {
+            setNewPost(title.getText(), description.getText());
+        }
     }
 
     public int getNewId(){
