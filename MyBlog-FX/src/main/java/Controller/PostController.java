@@ -185,7 +185,7 @@ public class PostController {
             return 0;
         }
         else {
-            return postList.stream().mapToInt(Post::getId).max().orElseThrow();
+            return postList.stream().mapToInt(Post::getId).max().orElseThrow() + 1;
         }
     }
 

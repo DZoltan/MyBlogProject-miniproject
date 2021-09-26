@@ -113,7 +113,7 @@ public class NodePanel extends StackPane {
                 FXMLLoader fxmlLoader = new FXMLLoader(CommentController.class.getResource("/fxs/postWindow.fxml"));
                 Parent root = fxmlLoader.load();
                 CommentController comment = fxmlLoader.<CommentController>getController();
-                comment.init();
+                comment.init(post, postController.userName);
                 stage.setScene(new Scene(root));
                 stage.setResizable(false);
                 stage.show();
