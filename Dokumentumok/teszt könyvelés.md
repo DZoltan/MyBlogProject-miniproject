@@ -23,6 +23,7 @@ Kész:
 - 2021.09.26. 22:18:37: a tesztelés során minden gomb megjelent
 - 2021.09.27. 10:42:10: kommentelés opción belül a törlés gomb látszik a komment gazdájának.
 - 2021.09.27. 10:42:10: kommentelés opción belül a törlés gomb működik, ha kommentelő törli
+- 2021.09.27. 10:46:45: Keresés gombbal szűrni lehet a státuszokra.
 
 
 nem megy:
@@ -32,4 +33,5 @@ nem megy:
 
 Javítva: 
 
-2021.09.27. 10:42:10: kommentelés opción belül küldés működik
+- 2021.09.27. 10:42:10: kommentelés opción belül küldés működik
+- 2021.09.27. 10:46:45: Keresés gomb működik
