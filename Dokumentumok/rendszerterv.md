@@ -26,7 +26,8 @@ Projektterv
 
 Üzleti folyamatok modellje
 ---------------------------
-  ![Üzleti folyamatok modellje](uzleti_folyamatok_modellje.png)
+  ![uzleti_folymaatok](https://user-images.githubusercontent.com/55513932/134815706-a3982f57-7fe9-4024-b09b-a9105273d457.jpg)
+
 
 Követelmények
 --------------

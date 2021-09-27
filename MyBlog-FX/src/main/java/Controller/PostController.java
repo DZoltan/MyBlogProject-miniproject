@@ -10,9 +10,11 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Font;
 import javafx.util.Pair;
 
 import java.io.File;
@@ -43,6 +45,7 @@ public class PostController {
     public void init() {
         if(userName.isBlank()){
             welcome.setText("Kérem jelentkezzen be!");
+            welcome.setFont(new Font("Arial", 20));
         }
         try {
             postList = seriDeseri.DeSerialize(new File("sample.json"));
@@ -63,16 +66,26 @@ public class PostController {
             searchBtn.setVisible(true);
             logoutBtn.setVisible(true);
             newPostBtn.setVisible(true);
-            addNodeToSP();
+            addNodeToSP(null,null);
         }
 
     }
 
     public void search(ActionEvent actionEvent) {
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Information Dialog");
-        alert.setHeaderText("search");
-        alert.showAndWait();
+        ChoiceDialog<Status> dialog = new ChoiceDialog<Status>(Status.TO_DO);
+        dialog.getItems().addAll(Status.values());
+        dialog.setTitle("Opciók");
+        dialog.setHeaderText(null);
+        dialog.setContentText("Válasszon az alábbi opciók közül");
+
+        Optional<Status> result = dialog.showAndWait();
+        if (result.isPresent()){
+            seriDeseri.Serialize(postList);
+            scroll.setContent(null);
+            addNodeToSP(null,result.get());
+            System.out.println("A választása:" + result.get());
+        }
+
     }
 
     public void logout(ActionEvent actionEvent) {
@@ -86,15 +99,32 @@ public class PostController {
 
 
 
-    public void addNodeToSP() {
+    public void addNodeToSP(String author, Status status) {
         VBox root = new VBox();
         root.setSpacing(10);
         root.setPadding(new Insets(10));
 
         try {
+
             for (Post post : postList) {
-                NodePanel node = new NodePanel(post, this);
-                root.getChildren().addAll(node);
+
+                //Mert ha keresünk akkor megadjuk mik a szempontok
+                if(author == "" || status == null) {
+                    NodePanel node = new NodePanel(post, this);
+                    root.getChildren().addAll(node);
+                }else{
+
+                    if(post.getUser() == author && post.getStatus() == status) {
+                        NodePanel node = new NodePanel(post, this);
+                        root.getChildren().addAll(node);
+                    }else if(post.getUser() == author){
+                        NodePanel node = new NodePanel(post, this);
+                        root.getChildren().addAll(node);
+                    }else if(post.getStatus() == status){
+                        NodePanel node = new NodePanel(post, this);
+                        root.getChildren().addAll(node);
+                    }
+                }
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -119,6 +149,7 @@ public class PostController {
          if (!result.orElseThrow().isBlank()){
              userName = result.orElseThrow();
              welcome.setText("Üdvözlünk, " + userName);
+             welcome.setFont(new Font("Arial", 30));
              return true;}
          return false;
 
@@ -139,7 +170,7 @@ public class PostController {
             postList.remove(post);
             seriDeseri.Serialize(postList);
             scroll.setContent(null);
-            addNodeToSP();
+            addNodeToSP(null,null);
         }
     }
 
@@ -177,7 +208,9 @@ public class PostController {
 
         Optional<Pair<String, String>> result = dialog.showAndWait();
 
-        setNewPost(title.getText(), description.getText());
+        if(title.getText() != "" && description.getText() != "") {
+            setNewPost(title.getText(), description.getText());
+        }
     }
 
     public int getNewId(){
@@ -195,14 +228,14 @@ public class PostController {
         postList.add(newPost);
         seriDeseri.Serialize(postList);
         scroll.setContent(null);
-        addNodeToSP();
+        addNodeToSP(null,null);
 
     }
     
     
     public void listDialog(Post post) {
 
-    ChoiceDialog<Status> dialog = new ChoiceDialog<>();
+    ChoiceDialog<Status> dialog = new ChoiceDialog<Status>(Status.TO_DO);
     dialog.getItems().addAll(Status.values());
     dialog.setTitle("Opciók");
     dialog.setHeaderText(null);
@@ -213,7 +246,7 @@ public class PostController {
         post.setStatus(result.orElseThrow());
         seriDeseri.Serialize(postList);
         scroll.setContent(null);
-        addNodeToSP();
+        addNodeToSP(null,null);
          System.out.println("A választása:" + result.get());
     }
 
