@@ -7,6 +7,19 @@
     <groupId>org.example</groupId>
     <artifactId>MyBlog-FX</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <description>-</description>
+    <developers>
+        <developer>
+            <id>rubimaistro</id>
+            <name>Ruben Deák</name>
+            <email>rubendeak15@gmail.com</email>
+        </developer>
+        <developer>
+            <id>dzoltan</id>
+            <name>-</name>
+            <email>-</email>
+        </developer>
+    </developers>
     <build>
         <plugins>
             <plugin>
@@ -37,6 +50,18 @@
         <maven.compiler.target>17</maven.compiler.target>
     </properties>
     <dependencies>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>5.7.1</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.platform</groupId>
+            <artifactId>junit-platform-runner</artifactId>
+            <version>1.2.0</version>
+            <scope>test</scope>
+        </dependency>
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
