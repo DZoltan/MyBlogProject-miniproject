@@ -21,11 +21,12 @@ import javafx.geometry.*;
 import javafx.scene.paint.Paint;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
+import lombok.Data;
 import lombok.SneakyThrows;
 
 import java.io.IOException;
 
-
+@Data
 public class NodePanel extends StackPane {
     Label title = new Label();
     Label description = new Label();
