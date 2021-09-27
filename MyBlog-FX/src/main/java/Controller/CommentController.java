@@ -2,6 +2,7 @@ package Controller;
 
 import Model.Comment;
 import Model.Post;
+import UIElements.KommentPanel;
 import UIElements.NodePanel;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -13,6 +14,7 @@ import javafx.util.Pair;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -35,11 +37,20 @@ public class CommentController {
     @FXML
     private TextField commentField;
 
+    private PostController postController;
+    public Post post;
 
-    public void init(Post post, String username){
+
+    public void init(Post post, String username, PostController postController){
+        this.post = post;
         this.username = username;
-        authorLabel.setText("Szerző :" + post.getUser());
-
+        authorLabel.setText("Szerző : " + post.getUser());
+        statusLabel.setText("Státusz : " +post.getStatus().toString());
+        descriptionLabel.setText(post.getDescription());
+        titleLabel.setText(post.getTitle());
+        this.postController = postController;
+        comments = post.getComments();
+        addNodeToSP();
     }
 
     public void addNodeToSP() {
@@ -47,58 +58,46 @@ public class CommentController {
         root.setSpacing(10);
         root.setPadding(new Insets(10));
 
-        try {
-            for (Post post : comments) {
-                NodePanel node = new NodePanel(post, this);
+        /*try {
+            for (Comment comment : comments) {
+                KommentPanel node = new KommentPanel(comment, this);
                 root.getChildren().addAll(node);
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
-        }
+        }*/
 
+        for (Comment comment : comments) {
+            KommentPanel node = new KommentPanel(comment, this);
+            root.getChildren().addAll(node);
 
         scroll.setContent(root);
 
+        }
     }
+
+    public void deleteComment(Comment comment){
+        comments.remove(comment);
+        postController.updateJson();
+        scroll.setContent(null);
+        addNodeToSP();
+    }
+
     public int getNewId(){
         if(comments.size() == 0) {
             return 0;
         }
         else {
-            return comments.stream().mapToInt(Post::getId).max().orElseThrow() + 1;
+            return comments.stream().mapToInt(Comment::getId).max().orElseThrow() + 1;
         }
     }
     public void sendComment(ActionEvent actionEvent) {
-        
+        comments.add(new Comment(getNewId(), username, LocalDate.now().toString(), commentField.getText()));
+        postController.updateJson();
+        scroll.setContent(null);
+        addNodeToSP();
     }
-    public void newPost() {
-        Dialog<Pair<String, String>> dialog = new Dialog<>();
-        dialog.setTitle("Hozzászólás");
-        dialog.setHeaderText(null);
 
-        ButtonType doneButton = new ButtonType("Kész", ButtonBar.ButtonData.OK_DONE);
-        dialog.getDialogPane().getButtonTypes().addAll(doneButton, ButtonType.CANCEL);
-
-        GridPane grid = new GridPane();
-        grid.setPrefSize(300,200);
-        grid.setPadding(new Insets(10, 10, 10, 10));
-
-        TextField title = new TextField();
-        TextArea description = new TextArea();
-        description.setPrefSize(200,200);
-        description.setWrapText(true);
-        description.setPromptText("Leírás");
-        
-        grid.add(new Label("Leírás:"), 0, 1);
-        grid.add(description, 1, 1);
-
-
-        dialog.getDialogPane().setContent(grid);
-
-        Optional<Pair<String, String>> result = dialog.showAndWait();
-
-        setNewPost(title.getText(), description.getText());
-    }
 }

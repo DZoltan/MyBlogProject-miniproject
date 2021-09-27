@@ -23,7 +23,7 @@
         </rowConstraints>
          <children>
 
-            <ScrollPane fx:id="scroll" pannable="true" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1" />
+            <ScrollPane fx:id="scroll" pannable="true" prefHeight="200.0" prefWidth="600.0" GridPane.rowIndex="1" GridPane.halignment="CENTER"/>
             <Button fx:id="newPostBtn" visible="false" prefHeight="60.0" prefWidth="200.0" GridPane.halignment="CENTER" GridPane.rowIndex="0"
                     GridPane.valignment="CENTER" text="Új bejegyzés" onAction="#newPost" />
          </children>

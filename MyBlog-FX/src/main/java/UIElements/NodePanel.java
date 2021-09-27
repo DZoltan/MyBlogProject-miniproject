@@ -3,7 +3,7 @@ package UIElements;
 import Controller.CommentController;
 import Controller.PostController;
 import Model.Post;
-import com.sun.prism.shader.Solid_Color_Loader;
+
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
@@ -121,7 +121,7 @@ public class NodePanel extends StackPane {
                 FXMLLoader fxmlLoader = new FXMLLoader(CommentController.class.getResource("/fxs/postWindow.fxml"));
                 Parent root = fxmlLoader.load();
                 CommentController comment = fxmlLoader.<CommentController>getController();
-                comment.init(post, postController.userName);
+                comment.init(post, postController.userName, postController);
                 stage.setScene(new Scene(root));
                 stage.setResizable(false);
                 stage.show();

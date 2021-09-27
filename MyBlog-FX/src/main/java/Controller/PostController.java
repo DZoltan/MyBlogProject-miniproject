@@ -168,7 +168,7 @@ public class PostController {
         Optional<ButtonType> result = delalert.showAndWait();
         if (result.get() == ButtonType.OK) {
             postList.remove(post);
-            seriDeseri.Serialize(postList);
+            updateJson();
             scroll.setContent(null);
             addNodeToSP(null,null);
         }
@@ -226,7 +226,7 @@ public class PostController {
         List<Comment> emptyComment = new ArrayList<>();
         Post newPost = new Post( getNewId(), title, userName, LocalDate.now().toString(), Status.TO_DO, description, emptyComment);
         postList.add(newPost);
-        seriDeseri.Serialize(postList);
+        updateJson();
         scroll.setContent(null);
         addNodeToSP(null,null);
 
@@ -244,13 +244,17 @@ public class PostController {
     Optional<Status> result = dialog.showAndWait();
     if (result.isPresent()){
         post.setStatus(result.orElseThrow());
-        seriDeseri.Serialize(postList);
+        updateJson();
         scroll.setContent(null);
         addNodeToSP(null,null);
          System.out.println("A választása:" + result.get());
     }
 
 }
+
+    public void updateJson(){
+        seriDeseri.Serialize(postList);
+    }
 
                         
         
